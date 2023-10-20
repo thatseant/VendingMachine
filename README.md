@@ -14,4 +14,5 @@ This project offers a representation of a `VendingMachine`. `VendingMachine` mai
 
 ## Running the Program:
 1. Navigate to the project directory using the terminal or command prompt.
-2. Run the main script using the following command: python VendingMachine.py
+2. Run the main script using the following command: 
+`python VendingMachine.py`
