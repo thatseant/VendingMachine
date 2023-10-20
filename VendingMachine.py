@@ -9,20 +9,18 @@ class VendingMachine:
         self.drinks.append(drink)
 
     def buy_drink(self, drink_id, amount_given):
-        #Returns change as list of notes
+        # Returns list of notes comprising change customer receives
         changeNotes = []
 
-        # Check for valid drink_id
-        if drink_id < 0 or drink_id >= len(self.drinks):
-            print("Invalid drink ID.")
+        if drink_id >= len(self.drinks):
+            print("Invalid drink ID")
             changeAmt = amount_given
         else:
             changeAmt = amount_given - self.drinks[drink_id].price
 
-            # Check if amount_given is less than the drink's price
-            if changeAmt < 0:
-                print(f"Insufficient funds. {self.drinks[drink_id].name} costs ${self.drinks[drink_id].price}.")
-                return []
+        if changeAmt < 0:
+            print("Insufficient amount given. Please provide enough money to purchase the drink.")
+            return []
 
         for denom, name in zip(self.denominations, self.denomination_names):
             while changeAmt >= denom:
@@ -30,16 +28,46 @@ class VendingMachine:
                 changeNotes.append(name)
 
         return changeNotes
+
     
     def buy_with_notes(self, drink_id, notes_given):
         # Takes in amount as list of notes, notes_given, instead eg. ['$10', '$2', '$5', ...].
         amount_given = sum([self.denominations[self.denomination_names.index(note)] for note in notes_given])
         return self.buy_drink(drink_id, amount_given)
+    
+    def display_drinks(self):
+        print("Available drinks:")
+        for idx, drink in enumerate(self.drinks):
+                print(f"ID: {idx} - {drink.name} (${drink.price})")
 
 class Drink:
     def __init__(self, name, price):
       self.name = name
       self.price = price
+
+def main():
+    vm = VendingMachine()
+
+    # Initializing with a list of drinks
+    drinks = [Drink("Milo", 8), Drink("Iced Coffee", 11), Drink("Iced Tea", 7), Drink("100 Plus", 4), Drink("Green Tea", 12)]
+    for drink in drinks:
+        vm.add_drinks(drink)
+
+    while True:
+        vm.display_drinks()
+        
+        drink_id = int(input("Enter the ID of the drink you want to purchase: "))
+        amount_given = float(input("Enter the amount given ($): "))
+
+        change = vm.buy_drink(drink_id, amount_given)
+        print(f"Your change is: {', '.join(change)}\n")
+
+        cont = input("Do you want to buy another drink? (yes/no): ").lower()
+        if cont != 'yes':
+            break
+
+if __name__ == "__main__":
+    main()
   
 #Test Cases
 

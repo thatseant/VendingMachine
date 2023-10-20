@@ -1,10 +1,11 @@
 # Vending Machine Project
 
-This project offers a representation of a `VendingMachine`. It maintains a collection of various drinks and provides methods to determine the list of notes that constitute the change a customer receives upon purchasing a drink.
+This project offers a representation of a `VendingMachine`. `VendingMachine` maintains a collection of various drinks and provides methods to determine the list of notes that constitute the change a customer receives upon purchasing a drink. Users interact with the program by providing input to select drinks and specify the amount they are paying.
 
 ## Features:
 - Maintains a list of different drinks.
-- Computes the change to be given to the customer in the form of notes.
+- Accept user input to select a drink and specify the amount given.
+- Calculate and display the change to be returned to the user in terms of note denominations.
 
 ## Potential Improvements:
 
