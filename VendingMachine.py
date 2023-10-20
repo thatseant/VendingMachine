@@ -121,10 +121,10 @@ def test_invalid_drink_id():
     change = vm.buy_drink(5, 10)  # No drink with ID 5
     assert change == ['$10']
 
-test_add_drinks()
-test_exact_amount()
-test_more_than_required_amount()
-test_insufficient_amount()
-test_buy_with_exact_notes()
-test_buy_with_more_notes()
-test_invalid_drink_id()
+# test_add_drinks()
+# test_exact_amount()
+# test_more_than_required_amount()
+# test_insufficient_amount()
+# test_buy_with_exact_notes()
+# test_buy_with_more_notes()
+# test_invalid_drink_id()
