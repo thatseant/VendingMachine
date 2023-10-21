@@ -1,6 +1,8 @@
 # Vending Machine Project
 
-This project offers a representation of a `VendingMachine`. `VendingMachine` maintains a collection of various drinks and provides methods to determine the list of notes that constitute the change a customer receives upon purchasing a drink. Users interact with the program by providing input to select drinks and specify the amount they are paying.
+(Project Specification is for Singapore Dollar System, which is canonical, and for integer values only.)
+
+This project offers a representation of a `VendingMachine`. `VendingMachine` maintains a collection of various drinks and provides methods to determine the list of notes that constitute the change a customer receives upon purchasing a drink. Users interact with the program by providing input to select drinks and specify the amount they are paying. The following Greedy approach to the Change-Making problem works for canonical coin/dollar systems.
 
 ## Features:
 - Maintains a list of different drinks.
